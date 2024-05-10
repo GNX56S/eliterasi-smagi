@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e6c14aebda.js" crossorigin="anonymous"></script>
+    <script src="/src/popUpKesimpulan.js"></script>
+    <link rel="stylesheet" href="/src/output.css">
+    <title>Baca Artikel</title>
+</head>
+<body>
+    <header class="bg-[#057bbf] p-3">
+        <nav class="">
+            <a href="" class="text-2xl font-bold"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></a>
+        </nav>
+    </header>
+    <main>
+        <div class="baca-artikel mt-4 mx-4">
+            <div class="">
+                <img class="shadow-md w-96 p-1" src="/src/image/batuan-karst.webp" alt="">
+                <div class="detail-penulis">
+                    <div class="penulis flex justify-between">
+                        <p><span><i class="fa-solid fa-circle-user" style="color: #303030;"></i></span>  Yusron Dwi aji</p>
+                        <p><span><i class="fa-solid fa-calendar-days" style="color: #303030;"></i></span> 30 Februari 2024</p>
+                    </div>
+                    <p><span><i class="fa-solid fa-book" style="color: #303030;"></i></span> Geologi</p>
+                </div>
+            </div>
+            <div class="isi-artikel mt-3">
+                <div class="judul m">
+                    <h1 class="text-xl font-bold">Kompleks Batuan Karst</h1>
+                </div>
+                <div class="isi text-justify">
+                    <p class="py-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta fuga sit repellendus quasi odio! Eos omnis iusto, sapiente consectetur deserunt vel repellendus quis nobis ut, quasi in doloribus amet cumque?</p>
+                    <p class="py-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, inventore officiis ut, impedit maxime iusto fuga expedita iste quod nesciunt natus exercitationem aliquam numquam repellat explicabo vero accusamus iure voluptatibus?</p>
+                    <p class="py-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dolorem corrupti nisi cumque veritatis ullam blanditiis alias sunt laudantium expedita, cupiditate necessitatibus commodi optio ab, illo, consectetur culpa temporibus quas.</p>
+                </div>
+            </div>
+            <div class="tbl-form text-center my-5" >
+                <button class="bg-[#057bbf] rounded-lg text-2xl font-bold text-white px-4 py-3" onclick="openModal('modelConfirm')">Kesimpulan</button>
+            </div>
+            <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+                <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
+                    <div class="flex justify-between items-center p-3">
+                        <p class="text-lg font-medium">Tulis Kesimpulan</p>
+                        <button onclick="closeModal('modelConfirm')" type="button" class="w-4">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="px-3">
+                        <textarea class="border border-black w-full h-60 rounded-md" name="" id=""></textarea>
+                    </div>
+                    <div class="text-center p-2">
+                        <button class="bg-[#057bbf] rounded-lg text-lg font-bold text-white px-2 py-1" onclick="closeModal('modelConfirm')">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
