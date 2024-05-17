@@ -1,84 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
     <script src="https://kit.fontawesome.com/e6c14aebda.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/src/output.css">
+    <script src="/src/sidebarDaftarArtikel.js"></script>
     <title>Tulis Artikel</title>
 </head>
-<body>
-    <header class="sticky top-0 z-30 flex justify-between items-center py-5 px-6 bg-white shadow-md">
-        <div class="flex items-center">
-            <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-                <i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i>
-            </button>
-            <h1 class="text-black text-3xl font-bold ml-5">Daftar Artikel</h1>
-        </div>
-        <div class="bg-[#11C022] p-3 rounded-md">
-            <button class="text-white text-xl font-bold"><span><i class="fa-solid fa-plus fa-lg"></i></span> TULIS ARTIKEL</button>
-        </div>
-    </header>
-    <aside>
-        <div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-72 h-screen  overflow-y-auto transition-transform -translate-x-full bg-[#272E33]" tabindex="-1" aria-labelledby="drawer-navigation-label">
-            <div class="profil-guru bg-gradient-to-t from-[#DA251C] to-[#057bbf62] flex justify-between items-center px-4 py-2 w-full">
-                <!-- <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class=" relative bottom-8 left-64" >
-                    <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i>
-                </button> -->
-                <div class="border-4 border-white rounded-full w-20 h-20">
-                    <img class="w-full rounded-full p-[2px]" src="/src/image/guru.jpg" alt="foto-guru">
+
+<body class="flex">
+    <aside id="sidebar" class="bg-[#272e33] text-white h-screen flex flex-col items-center transition-all w-16">
+        <button id="toggleBtn" class="mt-9">
+            <i id="toggleIcon" class="fas fa-bars fa-xl"></i>
+            <span class="hidden ml-2 text-base">Tutup</span>
+        </button>
+        <ul class="mt-10 flex flex-col items-center w-full ">
+            <li class="profil-guru w-full mb-4 hidden transition-all">
+                <div class="flex justify-around items-center">
+                    <div class="border-2 border-white rounded-full w-14 h-14">
+                        <img class="w-full rounded-full p-[2px]" src="/src/image/guru.jpg" alt="foto-guru">
+                    </div>
+                    <div class="text-white text-base">
+                        <p>Nama Guru</p>
+                        <p>Guru Bahasa Indonesia</p>
+                    </div>
                 </div>
-                <div class="text-white text-base">
-                    <p>Nama Guru</p>
-                    <p>Guru Bahasa Indonesia</p>
-                </div>
-            </div>
-            <div class="py-1 px-2 overflow-y-auto">
-                <ul class="space-y-2 font-medium">
-                    <li>
-                        <a href="#" class="flex items-center p-2  rounded-lg text-white group">
-                            <i class="fa-regular fa-file fa-lg"></i>
-                            <span class="ms-3">Daftar Artikel</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center p-2  rounded-lg text-white group">
-                            <i class="fa-solid fa-file-signature fa-lg" style="color: #ffffff;"></i>
-                            <span class="ms-3">Draft Artikel</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+            </li>
+            <li class="w-full mb-4">
+                <a href="#" class="side-text flex items-center justify-center px-4 py-2 hover:bg-gray-700 transition-all duration-300">
+                    <i class="fa-regular fa-file"></i>
+                    <span class="hidden ml-4">Daftar Artikel</span>
+                </a>
+            </li>
+            <li class="w-full mb-4">
+                <a href="#" class="side-text flex items-center justify-center px-4 py-2 hover:bg-gray-700 transition-all duration-300">
+                    <i class="fa-solid fa-file-signature" style="color: #ffffff;"></i>
+                    <span class="hidden ml-4">Draft Artikel</span>
+                </a>
+            </li>
+        </ul>
     </aside>
-    <main class="bg-slate-200 h-[100vh]">
+    <main class="bg-slate-200 h-[100vh] flex-1">
+        <header class="sticky top-0 z-30 flex justify-between items-center py-5 px-6 bg-white shadow-md">
+            <div class="">
+                <h1 class="text-black text-3xl font-bold ml-5">Daftar Artikel</h1>
+            </div>
+            <div class="bg-[#11C022] p-3 rounded-md">
+                <button  onclick="openModal('modelConfirm')" class="text-white text-xl font-bold"><span><i class="fa-solid fa-plus fa-lg"></i></span> TULIS
+                    ARTIKEL</button>
+            </div>
+        </header>
         <div class="daftar-artikel flex flex-col items-center p-6">
             <a href="#" class="artikel flex justify-between cursor-pointer bg-white p-5 m-2 w-5/6 rounded-md shadow-lg">
-               <div class="flex">
+                <div class="flex">
                     <img class="w-40" src="/src/image/batuan-karst.webp" alt="">
                     <div class="div p-2">
                         <h2 class="font-semibold text-2xl">Mengenai Batuan Karst</h2>
                         <p class="text-lg">Laut dangkal yang terangkat dan mengendapnya terumbu karang menjadi batu</p>
                     </div>
-               </div>
+                </div>
                 <button class="relative bottom-5 text-right text-lg">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </a>
-            <a href="#" class="list-artikel flex justify-between cursor-pointer bg-white p-5 m-2 w-5/6 rounded-md shadow-lg">
+            <a href="#"
+                class="list-artikel flex justify-between cursor-pointer bg-white p-5 m-2 w-5/6 rounded-md shadow-lg">
                 <div class="flex">
-                     <img class="w-40" src="/src/image/batuan-karst.webp" alt="">
-                     <div class="div p-2">
-                         <h2 class="font-semibold text-2xl">Mengenai Batuan Karst</h2>
-                         <p class="text-lg">Laut dangkal yang terangkat dan mengendapnya terumbu karang menjadi batu</p>
-                     </div>
+                    <img class="w-40" src="/src/image/batuan-karst.webp" alt="">
+                    <div class="div p-2">
+                        <h2 class="font-semibold text-2xl">Mengenai Batuan Karst</h2>
+                        <p class="text-lg">Laut dangkal yang terangkat dan mengendapnya terumbu karang menjadi batu</p>
+                    </div>
                 </div>
-                 <button class="relative bottom-5 text-right text-lg">
-                     <i class="fa-solid fa-trash"></i>
-                 </button>
-             </a>
+                <button class="relative bottom-5 text-right text-lg">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </a>
         </div>
     </main>
+    <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+        <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
+            <div class="flex justify-between items-center p-3">
+                <p class="text-lg font-medium">Tulis Kesimpulan</p>
+                <button onclick="closeModal('modelConfirm')" type="button" class="w-4">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+            </div>
+            <div class="px-3">
+                <form action="POST">
+                    <textarea class="border border-black w-full h-60 rounded-md p-2" name="" id="" placeholder="Ketik Disini.."></textarea>
+                    <div class="text-center p-2">
+                        <button class="bg-[#057bbf] rounded-lg text-lg font-bold text-white px-4 py-1">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
