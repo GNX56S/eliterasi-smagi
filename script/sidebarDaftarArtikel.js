@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleIcon = document.getElementById('toggleIcon');
 
     toggleBtn.addEventListener('click', () => {
-        if (sidebar.classList.contains('w-64')) {
-            sidebar.classList.replace('w-64', 'w-16');
+        if (sidebar.classList.contains('w-72')) {
+            sidebar.classList.replace('w-72', 'w-16');
             toggleIcon.classList.replace('fa-xmark', 'fa-bars');
             document.querySelectorAll('#sidebar span').forEach(span => span.classList.add('hidden'));
             document.querySelectorAll('.profil-guru').forEach(li => li.classList.add('hidden'));
             document.querySelectorAll('.side-text').forEach(a => a.classList.replace('justify-start','justify-center'));
         } else {
-            sidebar.classList.replace('w-16', 'w-64');
+            sidebar.classList.replace('w-16', 'w-72');
             toggleIcon.classList.replace('fa-bars', 'fa-xmark');
             document.querySelectorAll('#sidebar span').forEach(span => span.classList.remove('hidden'));
             document.querySelectorAll('.profil-guru').forEach(li => li.classList.remove('hidden'));

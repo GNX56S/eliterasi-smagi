@@ -14,7 +14,7 @@
 </head>
 
 <body class="flex">
-    <aside id="sidebar" class="bg-[#272e33] text-white min-h-full flex flex-col items-center transition-all w-16">
+    <aside id="sidebar" class="bg-[#272e33] text-white flex flex-col items-center transition-all w-16 min-h-full">
         <button id="toggleBtn" class="mt-9">
             <i id="toggleIcon" class="fas fa-bars fa-xl"></i>
             <span class="hidden ml-2 text-base">Tutup</span>
@@ -48,41 +48,37 @@
     <main class="bg-slate-200 flex-1">
         <header class="sticky top-0 z-30 flex justify-between items-center py-5 px-6 bg-white shadow-md">
             <div class="">
-                <h1 class="text-black text-3xl font-bold ml-5">Daftar Artikel</h1>
+                <h1 class="text-black text-3xl font-bold ml-5">Mengenai Batuan Karst</h1>
             </div>
             <div class="bg-[#11C022] p-3 rounded-md">
-                <button  onclick="openModal('modelConfirm')" class="text-white text-xl font-bold"><span><i class="fa-solid fa-plus fa-lg"></i></span> TULIS
+                <button  onclick="openModal('modelConfirm')" class="text-white text-xl font-bold"><span><i class="fa-solid fa-pen-to-square"></i></span> EDIT
                     ARTIKEL</button>
             </div>
         </header>
-        <div class="daftar-artikel flex flex-col items-center p-6">
-            <a href="artikel-guru.html" class="artikel flex justify-between cursor-pointer bg-white p-5 m-2 w-5/6 rounded-md shadow-lg">
-                <div class="flex">
-                    <img class="w-40" src="/image/batuan-karst.webp" alt="">
-                    <div class="div p-2">
-                        <h2 class="font-semibold text-2xl">Mengenai Batuan Karst</h2>
-                        <p class="text-lg">Laut dangkal yang terangkat dan mengendapnya terumbu karang menjadi batu</p>
+        <article>
+            <div class="baca-artikel mt-4 mx-52 bg-white p-10 rounded-md">
+                <div class="flex flex-col m-auto justify-center w-[70%]">
+                    <img class="shadow-md w-fit p-1" src="/image/batuan-karst.webp" alt="">
+                    <div class="detail-penulis justify-center flex px-1 py-2">
+                        <p class="text-base p-1"><span><i class="fa-solid fa-circle-user" style="color: #303030;"></i></span>  Yusron Dwi aji</p>
+                        <p class="text-base p-1"><span><i class="fa-solid fa-calendar-days" style="color: #303030;"></i></span> 30 Februari 2024</p>
+                        <p class="text-base p-1"><span><i class="fa-solid fa-book" style="color: #303030;"></i></span> Geologi</p>
                     </div>
                 </div>
-                <button class="relative bottom-5 text-right text-lg">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-            </a>
-            <a href="#"
-                class="list-artikel flex justify-between cursor-pointer bg-white p-5 m-2 w-5/6 rounded-md shadow-lg">
-                <div class="flex">
-                    <img class="w-40" src="/image/batuan-karst.webp" alt="">
-                    <div class="div p-2">
-                        <h2 class="font-semibold text-2xl">Mengenai Batuan Karst</h2>
-                        <p class="text-lg">Laut dangkal yang terangkat dan mengendapnya terumbu karang menjadi batu</p>
+                <div class="isi-artikel mt-3">
+                    <div class="judul m">
+                        <h1 class="text-xl font-bold">Kompleks Batuan Karst</h1>
+                    </div>
+                    <div class="isi text-justify">
+                        <p class="py-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta fuga sit repellendus quasi odio! Eos omnis iusto, sapiente consectetur deserunt vel repellendus quis nobis ut, quasi in doloribus amet cumque?</p>
+                        <p class="py-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, inventore officiis ut, impedit maxime iusto fuga expedita iste quod nesciunt natus exercitationem aliquam numquam repellat explicabo vero accusamus iure voluptatibus?</p>
+                        <p class="py-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dolorem corrupti nisi cumque veritatis ullam blanditiis alias sunt laudantium expedita, cupiditate necessitatibus commodi optio ab, illo, consectetur culpa temporibus quas.</p>
                     </div>
                 </div>
-                <button class="relative bottom-5 text-right text-lg">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-            </a>
-        </div>
+            </div>
+        </article>
     </main>
+
     <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
         <div class="relative p-5 top-8 mx-auto shadow-xl rounded-md bg-white w-9/12 h-[95%]">
             <div class="flex justify-between items-center p-3">
@@ -102,7 +98,7 @@
                 </div>
             </div>
             <div class="px-3">
-                <form method="post" >
+                <form method="put" >
                     <label for="Isi Artikel">Text Artikel</label>
                     <textarea id="summernote" name="editordata"></textarea>
                     <div class="text-right p-2">
@@ -129,5 +125,4 @@
         });
       </script>
 </body>
-
 </html>
